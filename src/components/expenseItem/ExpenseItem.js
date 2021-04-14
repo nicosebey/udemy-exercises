@@ -1,4 +1,3 @@
-import {useState} from 'react'
 import './ExpenseItem.css';
 import Card from '../card/Card'
 function ExpenseItem(props) {
