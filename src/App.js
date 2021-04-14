@@ -1,7 +1,8 @@
+import {useState} from 'react'
 import Expenses from './components/expenses/Expenses'
 import NewExpense from './components/newExpense/NewExpense'
 
-const expenses = [
+const expensesHardcoded = [
   {
     id: 'e1',
     title:'toilet paper',
@@ -25,9 +26,16 @@ const expenses = [
 
 
 
-function App() {
+const App = () => {
+  const [expenses, setExpenses] = useState(expensesHardcoded)
+
+  // const addExpenseHandler = (expense) => {
+  //   setExpenses((prevExpenses) => {
+  //     return [expense, ...prevExpenses]
+  //   });
+  // }
   const addExpenseHandler = (expense) => {
-    console.log(expense)
+    setExpenses((prevExpenses)=> { return [expense, ...prevExpenses]})
   }
   return (
     <div>
